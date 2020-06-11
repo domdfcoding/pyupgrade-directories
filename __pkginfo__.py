@@ -49,7 +49,7 @@ pypi_name = "pyupgrade-directories"
 import_name = "pyupgrade_directories"
 py_modules = []
 entry_points = {
-		"console_scripts": ['pyup-dirs=pyupgrade_directories:main', 'pyup_dirs=pyupgrade_directories:main']
+		"console_scripts": ['pyup-dirs=pyupgrade_directories.__main__:main', 'pyup_dirs=pyupgrade_directories.__main__:main']
 		}
 
 __license__ = "MIT"
