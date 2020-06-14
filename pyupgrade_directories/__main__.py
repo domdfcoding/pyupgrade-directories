@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 #
 #  __main__.py
 """
@@ -54,7 +53,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
 	ret = 0
 
 	for filename in iter_py_files(args.filenames, args.recursive):
-		print(f"Upgrading '{filename}'")
+		print(f"Checking '{filename}'")
 		ret |= _fix_file(str(filename), args)
 
 	return ret

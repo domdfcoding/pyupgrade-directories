@@ -15,7 +15,7 @@ API Reference
 
 
 :mod:`pyupgrade_directories.__main__`
-------------------------------------
+---------------------------------------
 
 .. automodule:: pyupgrade_directories.__main__
 	:members:

@@ -8,6 +8,8 @@ import os
 import re
 import sys
 import warnings
+
+# 3rd party
 from sphinx.locale import _
 
 # Suppress warnings from sphinx_autodoc_typehints

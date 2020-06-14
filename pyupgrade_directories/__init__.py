@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 #
 #  __init__.py
 """
@@ -25,6 +24,8 @@ __email__ = "dominic@davis-foster.co.uk"
 def iter_py_files(files_and_dirs: Iterable[pathlib.Path], recursive: bool = False) -> Iterable[pathlib.Path]:
 	"""
 	Iterate over all ``.py`` files in the given directories.
+
+	TODO: Wildcards in filename/directory
 
 	:param files_and_dirs: An iterable of filenames and directories
 	:param recursive: Whether subdirectories should be recursed. Default :py:obj:`False`

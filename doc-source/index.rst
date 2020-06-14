@@ -93,7 +93,7 @@ Installation
 
 		.. prompt:: bash
 
-			pip install git+https://github.com//pyupgrade-directories@master
+			pip install git+https://github.com/domdfcoding/pyupgrade-directories@master
 
 .. end installation
 
