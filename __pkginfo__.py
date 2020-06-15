@@ -42,7 +42,7 @@ __copyright__ = """
 2020 Dominic Davis-Foster <dominic@davis-foster.co.uk>
 """
 
-__version__ = "0.0.1"
+__version__ = "0.0.2"
 
 modname = "pyupgrade-directories"
 pypi_name = "pyupgrade-directories"
@@ -69,7 +69,7 @@ project_urls = {
 repo_root = pathlib.Path(__file__).parent
 
 # Get info from files; set: long_description
-long_description = (repo_root / "README.rst").read_text().replace("0.0.1", __version__) + '\n'
+long_description = (repo_root / "README.rst").read_text().replace("0.0.2", __version__) + '\n'
 
 install_requires = (repo_root / "requirements.txt").read_text().split('\n')
 extras_require = {'all': []}
