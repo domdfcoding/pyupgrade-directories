@@ -17,7 +17,7 @@ __author__ = "Dominic Davis-Foster"
 __copyright__ = "2020 Dominic Davis-Foster"
 
 __license__ = "MIT"
-__version__ = "0.0.2"
+__version__ = "0.0.3"
 __email__ = "dominic@davis-foster.co.uk"
 
 
