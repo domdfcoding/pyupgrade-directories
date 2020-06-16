@@ -18,11 +18,14 @@ pyupgrade-directories
 	* - Docs
 	  - |docs|
 	* - Tests
-	  - |travis| |requires| |codefactor|
+	  - |travis| |actions_windows| |actions_macos|
+	    |codefactor|
 	* - PyPI
 	  - |pypi-version| |supported-versions| |supported-implementations| |wheel|
+	* - Activity
+	  - |commits-latest| |commits-since| |maintained|
 	* - Other
-	  - |license| |language| |commits-since| |commits-latest| |maintained| 
+	  - |license| |language| |requires|
 
 .. |docs| image:: https://img.shields.io/readthedocs/pyupgrade-directories/latest?logo=read-the-docs
 	:target: https://pyupgrade-directories.readthedocs.io/en/latest/?badge=latest
@@ -31,6 +34,14 @@ pyupgrade-directories
 .. |travis| image:: https://img.shields.io/travis/com/domdfcoding/pyupgrade-directories/master?logo=travis
 	:target: https://travis-ci.com/domdfcoding/pyupgrade-directories
 	:alt: Travis Build Status
+
+.. |actions_windows| image:: https://github.com/domdfcoding/pyupgrade-directories/workflows/Windows%20Tests/badge.svg
+	:target: https://github.com/domdfcoding/pyupgrade-directories/actions?query=workflow%3A%22Windows+Tests%22
+	:alt: Windows Tests Status
+	
+.. |actions_macos| image:: https://github.com/domdfcoding/pyupgrade-directories/workflows/macOS%20Tests/badge.svg
+	:target: https://github.com/domdfcoding/pyupgrade-directories/actions?query=workflow%3A%22macOS+Tests%22
+	:alt: macOS Tests Status
 
 .. |requires| image:: https://requires.io/github/domdfcoding/pyupgrade-directories/requirements.svg?branch=master
 	:target: https://requires.io/github/domdfcoding/pyupgrade-directories/requirements/?branch=master
