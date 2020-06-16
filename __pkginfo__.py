@@ -91,4 +91,4 @@ classifiers = [
 
 		]
 
-keywords = ""
+keywords = "pyupgrade utility linting"
