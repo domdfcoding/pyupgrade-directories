@@ -30,7 +30,7 @@ pyupgrade-directories
 	:target: https://pyupgrade-directories.readthedocs.io/en/latest/?badge=latest
 	:alt: Documentation Status
 	
-.. |docs| image:: [Docs Check](https://github.com/domdfcoding/pyupgrade-directories/workflows/Docs%20Check/badge.svg
+.. |docs_check| image:: https://github.com/domdfcoding/pyupgrade-directories/workflows/Docs%20Check/badge.svg
 	:target: https://github.com/domdfcoding/pyupgrade-directories/actions?query=workflow%3A%22Docs+Check%22
 	:alt: Docs Check Status
 
