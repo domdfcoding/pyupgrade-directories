@@ -17,8 +17,7 @@ pyupgrade-directories
 	* - Docs
 	  - |docs| |docs_check|
 	* - Tests
-	  - |travis| |actions_windows| |actions_macos|
-	    |codefactor|
+	  - |travis| |actions_windows| |actions_macos| |codefactor|
 	* - PyPI
 	  - |pypi-version| |supported-versions| |supported-implementations| |wheel|
 	* - Activity
@@ -41,7 +40,7 @@ pyupgrade-directories
 .. |actions_windows| image:: https://github.com/domdfcoding/pyupgrade-directories/workflows/Windows%20Tests/badge.svg
 	:target: https://github.com/domdfcoding/pyupgrade-directories/actions?query=workflow%3A%22Windows+Tests%22
 	:alt: Windows Tests Status
-	
+
 .. |actions_macos| image:: https://github.com/domdfcoding/pyupgrade-directories/workflows/macOS%20Tests/badge.svg
 	:target: https://github.com/domdfcoding/pyupgrade-directories/actions?query=workflow%3A%22macOS+Tests%22
 	:alt: macOS Tests Status
