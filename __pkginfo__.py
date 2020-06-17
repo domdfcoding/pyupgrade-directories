@@ -88,9 +88,6 @@ classifiers = [
 		'Programming Language :: Python :: Implementation :: PyPy',
 		'Programming Language :: Python :: 3 :: Only',
 		'Typing :: Typed',
-		'Operating System :: Microsoft :: Windows',
-		'Operating System :: POSIX :: Linux',
-		'Operating System :: MacOS',
 
 		]
 
