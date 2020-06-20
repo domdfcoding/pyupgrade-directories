@@ -32,22 +32,22 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
 	"""
 
 	parser = argparse.ArgumentParser()
-	parser.add_argument('filenames', nargs='*', type=pathlib.Path)
-	parser.add_argument('--exit-zero-even-if-changed', action='store_true')
-	parser.add_argument('--keep-percent-format', action='store_true')
-	parser.add_argument('--keep-mock', action='store_true')
+	parser.add_argument("filenames", nargs='*', type=pathlib.Path)
+	parser.add_argument("--exit-zero-even-if-changed", action="store_true")
+	parser.add_argument("--keep-percent-format", action="store_true")
+	parser.add_argument("--keep-mock", action="store_true")
 	parser.add_argument(
-			'--py3-plus',
-			'--py3-only',
-			action='store_const',
-			dest='min_version',
+			"--py3-plus",
+			"--py3-only",
+			action="store_const",
+			dest="min_version",
 			default=(2, 7),
 			const=(3, ),
 			)
-	parser.add_argument('--py36-plus', action='store_const', dest='min_version', const=(3, 6))
-	parser.add_argument('--py37-plus', action='store_const', dest='min_version', const=(3, 7))
-	parser.add_argument('--py38-plus', action='store_const', dest='min_version', const=(3, 8))
-	parser.add_argument('--recursive', action='store_true', help="recurse subdirectories")
+	parser.add_argument("--py36-plus", action="store_const", dest="min_version", const=(3, 6))
+	parser.add_argument("--py37-plus", action="store_const", dest="min_version", const=(3, 7))
+	parser.add_argument("--py38-plus", action="store_const", dest="min_version", const=(3, 8))
+	parser.add_argument("--recursive", action="store_true", help="recurse subdirectories")
 	args = parser.parse_args(argv)
 
 	ret = 0
@@ -59,5 +59,5 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
 	return ret
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
 	exit(main())

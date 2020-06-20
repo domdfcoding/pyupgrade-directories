@@ -66,7 +66,7 @@ def iter_py_files(files_and_dirs: Iterable[pathlib.Path], recursive: bool = Fals
 		yield filename
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
 
 	# this package
 	from pyupgrade_directories.__main__ import main
