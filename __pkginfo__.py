@@ -53,7 +53,7 @@ entry_points = {
 		"console_scripts": ['pyup-dirs=pyupgrade_directories.__main__:main', 'pyup_dirs=pyupgrade_directories.__main__:main']
 		}
 
-__license__ = "MIT"
+__license__ = "MIT License"
 
 short_desc = "Run pyupgrade on all files in a directory, and optionally recursively."
 
@@ -78,16 +78,17 @@ extras_require = {'all': []}
 classifiers = [
 		'Development Status :: 4 - Beta',
 		'Intended Audience :: Developers',
+		'License :: OSI Approved :: MIT License',
 		'Operating System :: OS Independent',
 		'Programming Language :: Python',
-		'Topic :: Utilities',
+		'Programming Language :: Python :: 3 :: Only',
 		'Programming Language :: Python :: 3.6',
-		'Programming Language :: Python :: Implementation :: CPython',
 		'Programming Language :: Python :: 3.7',
 		'Programming Language :: Python :: 3.8',
 		'Programming Language :: Python :: 3.9',
+		'Programming Language :: Python :: Implementation :: CPython',
 		'Programming Language :: Python :: Implementation :: PyPy',
-		'Programming Language :: Python :: 3 :: Only',
+		'Topic :: Utilities',
 		'Typing :: Typed',
 
 		]
