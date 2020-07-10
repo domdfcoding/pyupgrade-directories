@@ -8,7 +8,7 @@ pyupgrade-directories
 
 .. end short_desc
 
-.. start shields 
+.. start shields
 
 .. list-table::
 	:stub-columns: 1
@@ -28,7 +28,7 @@ pyupgrade-directories
 .. |docs| image:: https://img.shields.io/readthedocs/pyupgrade-directories/latest?logo=read-the-docs
 	:target: https://pyupgrade-directories.readthedocs.io/en/latest/?badge=latest
 	:alt: Documentation Status
-	
+
 .. |docs_check| image:: https://github.com/domdfcoding/pyupgrade-directories/workflows/Docs%20Check/badge.svg
 	:target: https://github.com/domdfcoding/pyupgrade-directories/actions?query=workflow%3A%22Docs+Check%22
 	:alt: Docs Check Status
@@ -57,7 +57,7 @@ pyupgrade-directories
 	:target: https://pypi.org/project/pyupgrade-directories/
 	:alt: PyPI - Package Version
 
-.. |supported-versions| image:: https://img.shields.io/pypi/pyversions/pyupgrade-directories
+.. |supported-versions| image:: https://img.shields.io/pypi/pyversions/pyupgrade-directories?logo=python&logoColor=white
 	:target: https://pypi.org/project/pyupgrade-directories/
 	:alt: PyPI - Supported Python Versions
 
@@ -70,8 +70,8 @@ pyupgrade-directories
 	:alt: PyPI - Wheel
 
 .. |license| image:: https://img.shields.io/github/license/domdfcoding/pyupgrade-directories
-	:alt: License
 	:target: https://github.com/domdfcoding/pyupgrade-directories/blob/master/LICENSE
+	:alt: License
 
 .. |language| image:: https://img.shields.io/github/languages/top/domdfcoding/pyupgrade-directories
 	:alt: GitHub top language
@@ -100,14 +100,14 @@ Installation
 
 		.. prompt:: bash
 
-			pip install pyupgrade-directories
+			python3 -m pip install pyupgrade-directories --user
 
 
 	.. tab:: from GitHub
 
 		.. prompt:: bash
 
-			pip install git+https://github.com/domdfcoding/pyupgrade-directories@master
+			python3 -m pip install git+https://github.com/domdfcoding/pyupgrade-directories@master --user
 
 .. end installation
 
