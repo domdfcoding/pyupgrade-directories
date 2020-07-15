@@ -19,8 +19,6 @@ __all__ = [
 		"__version__",
 		"modname",
 		"pypi_name",
-		"py_modules",
-		"entry_points",
 		"__license__",
 		"__author__",
 		"short_desc",
@@ -29,13 +27,11 @@ __all__ = [
 		"github_username",
 		"web",
 		"github_url",
-		"project_urls",
 		"repo_root",
-		"long_description",
 		"install_requires",
 		"extras_require",
-		"classifiers",
-		"keywords",
+		"project_urls",
+
 		"import_name",
 		]
 
@@ -44,53 +40,23 @@ __copyright__ = """
 """
 
 __version__ = "0.0.3"
-
 modname = "pyupgrade-directories"
 pypi_name = "pyupgrade-directories"
 import_name = "pyupgrade_directories"
-py_modules = []
-entry_points = {
-		"console_scripts": ['pyup-dirs=pyupgrade_directories.__main__:main', 'pyup_dirs=pyupgrade_directories.__main__:main'],
-		}
-
 __license__ = "MIT License"
-
 short_desc = "Run pyupgrade on all files in a directory, and optionally recursively."
-
 __author__ = author = "Dominic Davis-Foster"
 author_email = "dominic@davis-foster.co.uk"
 github_username = "domdfcoding"
-web = github_url = f"https://github.com/domdfcoding/pyupgrade-directories"
-project_urls = {
-		"Documentation": f"https://pyupgrade-directories.readthedocs.io",
-		"Issue Tracker": f"{github_url}/issues",
-		"Source Code": github_url,
-		}
-
+web = github_url = "https://github.com/domdfcoding/pyupgrade-directories"
 repo_root = pathlib.Path(__file__).parent
-
-# Get info from files; set: long_description
-long_description = (repo_root / "README.rst").read_text(encoding="utf-8").replace("0.0.3", __version__) + '\n'
-
 install_requires = (repo_root / "requirements.txt").read_text(encoding="utf-8").split('\n')
 extras_require = {'all': []}
 
-classifiers = [
-		'Development Status :: 4 - Beta',
-		'Intended Audience :: Developers',
-		'License :: OSI Approved :: MIT License',
-		'Operating System :: OS Independent',
-		'Programming Language :: Python',
-		'Programming Language :: Python :: 3 :: Only',
-		'Programming Language :: Python :: 3.6',
-		'Programming Language :: Python :: 3.7',
-		'Programming Language :: Python :: 3.8',
-		'Programming Language :: Python :: 3.9',
-		'Programming Language :: Python :: Implementation :: CPython',
-		'Programming Language :: Python :: Implementation :: PyPy',
-		'Topic :: Utilities',
-		'Typing :: Typed',
 
-		]
 
-keywords = "pyupgrade utility linting"
+project_urls = {
+		"Documentation": "https://pyupgrade-directories.readthedocs.io",
+		"Issue Tracker": f"{github_url}/issues",
+		"Source Code": github_url,
+		}
