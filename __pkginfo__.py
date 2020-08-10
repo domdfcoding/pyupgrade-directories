@@ -44,9 +44,9 @@ modname = "pyupgrade-directories"
 pypi_name = "pyupgrade-directories"
 import_name = "pyupgrade_directories"
 __license__ = "MIT License"
-short_desc = "Run pyupgrade on all files in a directory, and optionally recursively."
-__author__ = author = "Dominic Davis-Foster"
-author_email = "dominic@davis-foster.co.uk"
+short_desc = 'Run pyupgrade on all files in a directory, and optionally recursively.'
+__author__ = author = 'Dominic Davis-Foster'
+author_email = 'dominic@davis-foster.co.uk'
 github_username = "domdfcoding"
 web = github_url = "https://github.com/domdfcoding/pyupgrade-directories"
 repo_root = pathlib.Path(__file__).parent
