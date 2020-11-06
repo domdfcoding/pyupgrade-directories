@@ -7,18 +7,15 @@ import os
 import re
 import sys
 
-# 3rd party
-from sphinx.locale import _
-
 sys.path.append(os.path.abspath('.'))
 sys.path.append(os.path.abspath('..'))
 
+# this package
 from __pkginfo__ import __version__
 
-# User-configurable lines
-# End of user-configurable lines
-
-github_url = "https://github.com/domdfcoding/pyupgrade-directories"
+github_username = "domdfcoding"
+github_repository = "pyupgrade-directories"
+github_url = f"https://github.com/{github_username}/{github_repository}"
 
 rst_prolog = f""".. |pkgname| replace:: pyupgrade-directories
 .. |pkgname2| replace:: ``pyupgrade-directories``
@@ -34,24 +31,21 @@ language = 'en'
 package_root = "pyupgrade_directories"
 
 extensions = [
+		'sphinx_toolbox',
+		'sphinx_toolbox.more_autodoc',
+		'sphinx_toolbox.more_autosummary',
+		'sphinx_toolbox.tweaks.param_dash',
 		'sphinx.ext.intersphinx',
-		'sphinx.ext.autodoc',
 		'sphinx.ext.mathjax',
-		'sphinx.ext.viewcode',
 		'sphinxcontrib.httpdomain',
-		"sphinxcontrib.extras_require",
-		"sphinx.ext.todo",
-		"sphinxemoji.sphinxemoji",
-		"notfound.extension",
-		"sphinx_tabs.tabs",
-		"sphinx-prompt",
-		"sphinx_autodoc_typehints",
-		"sphinx.ext.autosummary",
-		"autodocsumm",
-		"sphinx_copybutton",
-		"sphinxcontrib.default_values",
-		"sphinxcontrib.toctree_plus",
-		# "sphinx_gitstamp",
+		'sphinxcontrib.extras_require',
+		'sphinx.ext.todo',
+		'sphinxemoji.sphinxemoji',
+		'notfound.extension',
+		'sphinx_copybutton',
+		'sphinxcontrib.default_values',
+		'sphinxcontrib.toctree_plus',
+		'seed_intersphinx_mapping',
 		]
 
 sphinxemoji_style = 'twemoji'
@@ -68,18 +62,8 @@ suppress_warnings = ['image.nonlocal_uri']
 pygments_style = 'default'
 
 intersphinx_mapping = {
-		'rtd': ('https://docs.readthedocs.io/en/latest/', None),
-		'sphinx': ('https://www.sphinx-doc.org/en/stable/', None),
 		'python': ('https://docs.python.org/3/', None),
-		"NumPy": ('https://numpy.org/doc/stable/', None),
-		"SciPy": ('https://docs.scipy.org/doc/scipy/reference', None),
-		"Pandas": ('https://pandas.pydata.org/docs/', None),
-		"matplotlib": ('https://matplotlib.org', None),
-		"h5py": ('https://docs.h5py.org/en/latest/', None),
-		"Sphinx": ('https://www.sphinx-doc.org/en/master/', None),
-		"Django": ('https://docs.djangoproject.com/en/dev/', 'https://docs.djangoproject.com/en/dev/_objects/'),
-		"sarge": ('https://sarge.readthedocs.io/en/latest/', None),
-		"attrs": ('https://www.attrs.org/en/stable/', None),
+		'sphinx': ('https://www.sphinx-doc.org/en/stable/', None),
 		}
 
 html_theme = 'domdf_sphinx_theme'
@@ -103,48 +87,51 @@ latex_documents = [('index', f'{slug}.tex', project, author, 'manual')]
 man_pages = [('index', slug, project, [author], 1)]
 texinfo_documents = [('index', slug, project, author, slug, project, 'Miscellaneous')]
 
+toctree_plus_types = {
+		"class",
+		"function",
+		"method",
+		"data",
+		"enum",
+		"flag",
+		"confval",
+		"directive",
+		"role",
+		"confval",
+		"protocol",
+		"typeddict",
+		"namedtuple",
+		"exception",
+		}
 
+add_module_names = False
+hide_none_rtype = True
+all_typevars = True
+overloads_location = "bottom"
+
+
+autodoc_exclude_members = [   # Exclude "standard" methods.
+		"__dict__",
+		"__class__",
+		"__dir__",
+		"__weakref__",
+		"__module__",
+		"__annotations__",
+		"__orig_bases__",
+		"__parameters__",
+		"__subclasshook__",
+		"__init_subclass__",
+		"__attrs_attrs__",
+		"__init__",
+		"__new__",
+		"__getnewargs__",
+		"__abstractmethods__",
+		"__hash__",
+		]
 autodoc_default_options = {
 		'members': None,  # Include all members (methods).
 		'special-members': None,
 		"autosummary": None,
-		'exclude-members': ','.join([   # Exclude "standard" methods.
-				"__dict__",
-				"__dir__",
-				"__weakref__",
-				"__module__",
-				"__annotations__",
-				"__orig_bases__",
-				"__parameters__",
-				"__subclasshook__",
-				"__init_subclass__",
-				])
+		"show-inheritance": None,
+		'exclude-members': ','.join(autodoc_exclude_members),
 		}
-
-
-# Extensions to theme docs
-def setup(app):
-	from sphinx.domains.python import PyField
-	from sphinx.util.docfields import Field
-
-	app.add_object_type(
-			'confval',
-			'confval',
-			objname='configuration value',
-			indextemplate='pair: %s; configuration value',
-			doc_field_types=[
-					PyField(
-							'type',
-							label=_('Type'),
-							has_arg=False,
-							names=('type', ),
-							bodyrolename='class',
-							),
-					Field(
-							'default',
-							label=_('Default'),
-							has_arg=False,
-							names=('default', ),
-							),
-					]
-			)
