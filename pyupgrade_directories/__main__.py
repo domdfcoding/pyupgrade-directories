@@ -23,6 +23,8 @@ from pyupgrade import _fix_file  # type: ignore
 # this package
 from pyupgrade_directories import iter_py_files
 
+__all__ = ["main"]
+
 
 def main(argv: Optional[Sequence[str]] = None) -> int:
 	"""

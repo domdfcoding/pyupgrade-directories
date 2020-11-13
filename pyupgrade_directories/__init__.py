@@ -13,9 +13,10 @@ Run pyupgrade on all files in a directory, and optionally recursively.
 import pathlib
 from typing import Iterable, List
 
+__all__ = ["iter_py_files"]
+
 __author__ = "Dominic Davis-Foster"
 __copyright__ = "2020 Dominic Davis-Foster"
-
 __license__ = "MIT"
 __version__ = "0.0.3"
 __email__ = "dominic@davis-foster.co.uk"
@@ -64,10 +65,3 @@ def iter_py_files(files_and_dirs: Iterable[pathlib.Path], recursive: bool = Fals
 			continue
 
 		yield filename
-
-
-if __name__ == "__main__":
-
-	# this package
-	from pyupgrade_directories.__main__ import main
-	exit(main())
