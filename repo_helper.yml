@@ -26,13 +26,12 @@ travis_pypi_secure: "Nf/utaTtkGGietv7PHcr3my4751FwLN75WexZdnp+OKZC4Js2R/8pWWSQ4E
 
 classifiers:
   - 'Development Status :: 4 - Beta'
-#  - "Development Status :: 5 - Production/Stable"
-#  - "Development Status :: 6 - Mature"
-#  - "Development Status :: 7 - Inactive"
+  - 'Environment :: Console'
   - 'Intended Audience :: Developers'
   - 'Operating System :: OS Independent'
   - 'Programming Language :: Python'
   - 'Topic :: Utilities'
+  - "Topic :: Software Development"
 
 console_scripts:
   - pyup-dirs=pyupgrade_directories.__main__:main
