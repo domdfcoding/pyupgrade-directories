@@ -13,7 +13,7 @@ sys.path.append('.')
 from __pkginfo__ import *  # pylint: disable=wildcard-import
 
 setup(
-		description='Run pyupgrade on all files in a directory, and optionally recursively.',
+		description="Run pyupgrade on all files in a directory, and optionally recursively.",
 		extras_require=extras_require,
 		install_requires=install_requires,
 		py_modules=[],

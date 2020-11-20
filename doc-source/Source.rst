@@ -3,7 +3,7 @@ Downloading source code
 =========================
 
 The ``pyupgrade-directories`` source code is available on GitHub,
-and can be accessed from the following URL: https://github.com/domdfcoding/pyupgrade-directories"
+and can be accessed from the following URL: https://github.com/domdfcoding/pyupgrade-directories
 
 If you have ``git`` installed, you can clone the repository with the following command:
 
