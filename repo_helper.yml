@@ -40,3 +40,5 @@ keywords:
   - pyupgrade
   - utility
   - linting
+
+enable_docs: False

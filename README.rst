@@ -15,8 +15,6 @@ pyupgrade-directories
 	:stub-columns: 1
 	:widths: 10 90
 
-	* - Docs
-	  - |docs| |docs_check|
 	* - Tests
 	  - |travis| |actions_windows| |actions_macos| |codefactor| |pre_commit_ci|
 	* - PyPI
@@ -26,13 +24,7 @@ pyupgrade-directories
 	* - Other
 	  - |license| |language| |requires| |pre_commit|
 
-.. |docs| image:: https://img.shields.io/readthedocs/pyupgrade-directories/latest?logo=read-the-docs
-	:target: https://pyupgrade-directories.readthedocs.io/en/latest/?badge=latest
-	:alt: Documentation Build Status
 
-.. |docs_check| image:: https://github.com/domdfcoding/pyupgrade-directories/workflows/Docs%20Check/badge.svg
-	:target: https://github.com/domdfcoding/pyupgrade-directories/actions?query=workflow%3A%22Docs+Check%22
-	:alt: Docs Check Status
 
 .. |travis| image:: https://github.com/domdfcoding/pyupgrade-directories/workflows/Linux%20Tests/badge.svg
 	:target: https://github.com/domdfcoding/pyupgrade-directories/actions?query=workflow%3A%22Linux+Tests%22
