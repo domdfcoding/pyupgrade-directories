@@ -1,3 +1,10 @@
 [build-system]
 requires = [ "setuptools>=40.6.0", "wheel>=0.34.2",]
 build-backend = "setuptools.build_meta"
+
+[tool.importcheck]
+always = [ "pyupgrade_directories", "pyupgrade_directories.__main__",]
+
+[tool.importcheck.config]
+show = true
+count = true
