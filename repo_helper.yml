@@ -42,3 +42,9 @@ keywords:
   - linting
 
 enable_docs: False
+
+third_party_version_matrix:
+  pyupgrade:
+    - "2.5"
+    - "2.6"
+    - "2.7"
