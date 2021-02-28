@@ -2,8 +2,31 @@
 requires = [ "setuptools>=40.6.0", "wheel>=0.34.2",]
 build-backend = "setuptools.build_meta"
 
+[project]
+name = "pyupgrade-directories"
+version = "0.1.1"
+description = "Run pyupgrade on all files in a directory, and optionally recursively."
+readme = "README.rst"
+keywords = [ "pyupgrade", "utility", "linting",]
+dynamic = [ "requires-python", "classifiers", "dependencies",]
+[[project.authors]]
+email = "dominic@davis-foster.co.uk"
+name = "Dominic Davis-Foster"
+
 [tool.importcheck]
 always = [ "pyupgrade_directories", "pyupgrade_directories.__main__",]
+
+[project.license]
+file = "LICENSE"
+
+[project.urls]
+Homepage = "https://github.com/domdfcoding/pyupgrade-directories"
+"Issue Tracker" = "https://github.com/domdfcoding/pyupgrade-directories/issues"
+"Source Code" = "https://github.com/domdfcoding/pyupgrade-directories"
+
+[project.scripts]
+pyup-dirs = "pyupgrade_directories.__main__:main"
+pyup_dirs = "pyupgrade_directories.__main__:main"
 
 [tool.importcheck.config]
 show = true
