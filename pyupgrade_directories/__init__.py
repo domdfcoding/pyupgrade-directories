@@ -13,24 +13,26 @@ Run pyupgrade on all files in a directory, and optionally recursively.
 import pathlib
 from typing import Iterable, List
 
-__all__ = ["iter_py_files"]
-
 __author__ = "Dominic Davis-Foster"
 __copyright__ = "2020 Dominic Davis-Foster"
 __license__ = "MIT"
 __version__ = "0.1.1"
 __email__ = "dominic@davis-foster.co.uk"
 
+__all__ = ["iter_py_files"]
 
-def iter_py_files(files_and_dirs: Iterable[pathlib.Path], recursive: bool = False) -> Iterable[pathlib.Path]:
+
+def iter_py_files(
+		files_and_dirs: Iterable[pathlib.Path],
+		recursive: bool = False,
+		) -> Iterable[pathlib.Path]:
 	"""
 	Iterate over all ``.py`` files in the given directories.
 
 	TODO: Wildcards in filename/directory
 
 	:param files_and_dirs: An iterable of filenames and directories
-	:param recursive: Whether subdirectories should be recursed. Default :py:obj:`False`
-	:type recursive: bool
+	:param recursive: Whether subdirectories should be recursed.
 	"""
 
 	all_py_files: List[pathlib.Path] = []
