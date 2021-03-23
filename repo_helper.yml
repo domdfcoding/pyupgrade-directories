@@ -7,8 +7,10 @@ username: "domdfcoding"
 license: 'MIT'
 short_desc: 'Run pyupgrade on all files in a directory, and optionally recursively.'
 
+use_whey: true
 enable_conda: false
 enable_tests: false
+enable_docs: False
 
 python_deploy_version: 3.6
 
@@ -20,8 +22,6 @@ python_versions:
   - "3.9"
   - "3.10-dev"
   - "pypy3"
-
-# travis secure password for PyPI
 
 classifiers:
   - 'Development Status :: 4 - Beta'
@@ -40,8 +40,6 @@ keywords:
   - pyupgrade
   - utility
   - linting
-
-enable_docs: False
 
 third_party_version_matrix:
   pyupgrade:
