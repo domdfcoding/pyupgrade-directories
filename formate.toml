@@ -31,5 +31,17 @@ lines_between_types = 0
 use_parentheses = true
 remove_redundant_aliases = true
 default_section = "THIRDPARTY"
-known_third_party = [ "github", "pyupgrade", "requests",]
+known_third_party = [
+    "coincidence",
+    "coverage",
+    "coverage_pyver_pragma",
+    "github",
+    "importlib_metadata",
+    "pytest",
+    "pytest_cov",
+    "pytest_randomly",
+    "pytest_timeout",
+    "pyupgrade",
+    "requests",
+]
 known_first_party = "pyupgrade_directories"

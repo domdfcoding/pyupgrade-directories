@@ -22,18 +22,22 @@ jobs:
     runs-on: "windows-2019"
     continue-on-error: ${{ matrix.config.experimental }}
     env:
-      USING_COVERAGE: '3.6,3.7,3.8,3.9,3.10,pypy-3.6'
+      USING_COVERAGE: '3.6,3.7,3.8,3.9,3.10,3.11.0-rc.1,pypy-3.6,pypy-3.7,pypy-3.8,pypy-3.9'
 
     strategy:
       fail-fast: False
       matrix:
         config:
-          - {python-version: "3.6", testenvs: "py36-pyupgrade{2.5,2.6,2.7,2.8,2.9,2.10,2.11},build", experimental: False}
-          - {python-version: "3.7", testenvs: "py37-pyupgrade{2.5,2.6,2.7,2.8,2.9,2.10,2.11},build", experimental: False}
-          - {python-version: "3.8", testenvs: "py38-pyupgrade{2.5,2.6,2.7,2.8,2.9,2.10,2.11},build", experimental: False}
-          - {python-version: "3.9", testenvs: "py39-pyupgrade{2.5,2.6,2.7,2.8,2.9,2.10,2.11},build", experimental: False}
-          - {python-version: "3.10", testenvs: "py310-dev-pyupgrade{2.5,2.6,2.7,2.8,2.9,2.10,2.11},build", experimental: True}
-          - {python-version: "pypy-3.6", testenvs: "pypy3-pyupgrade{2.5,2.6,2.7,2.8,2.9,2.10,2.11},build", experimental: False}
+          - {python-version: "3.6", testenvs: "py36-pyupgrade{2.5,2.6,2.7,2.8,2.9,2.10,2.11,2.12,2.13,2.14,2.15,2.16,2.17,2.18,2.19,2.20,2.21,2.22,2.23,2.24,2.25,2.26,2.27,2.28,2.29,2.30,2.31,latest},build", experimental: False}
+          - {python-version: "3.7", testenvs: "py37-pyupgrade{2.5,2.6,2.7,2.8,2.9,2.10,2.11,2.12,2.13,2.14,2.15,2.16,2.17,2.18,2.19,2.20,2.21,2.22,2.23,2.24,2.25,2.26,2.27,2.28,2.29,2.30,2.31,2.32,2.33,2.34,2.35,2.36,2.37,latest},build", experimental: False}
+          - {python-version: "3.8", testenvs: "py38-pyupgrade{2.5,2.6,2.7,2.8,2.9,2.10,2.11,2.12,2.13,2.14,2.15,2.16,2.17,2.18,2.19,2.20,2.21,2.22,2.23,2.24,2.25,2.26,2.27,2.28,2.29,2.30,2.31,2.32,2.33,2.34,2.35,2.36,2.37,latest},build", experimental: False}
+          - {python-version: "3.9", testenvs: "py39-pyupgrade{2.5,2.6,2.7,2.8,2.9,2.10,2.11,2.12,2.13,2.14,2.15,2.16,2.17,2.18,2.19,2.20,2.21,2.22,2.23,2.24,2.25,2.26,2.27,2.28,2.29,2.30,2.31,2.32,2.33,2.34,2.35,2.36,2.37,latest},build", experimental: False}
+          - {python-version: "3.10", testenvs: "py310-pyupgrade{2.5,2.6,2.7,2.8,2.9,2.10,2.11,2.12,2.13,2.14,2.15,2.16,2.17,2.18,2.19,2.20,2.21,2.22,2.23,2.24,2.25,2.26,2.27,2.28,2.29,2.30,2.31,2.32,2.33,2.34,2.35,2.36,2.37,latest},build", experimental: False}
+          - {python-version: "3.11.0-rc.1", testenvs: "py311-dev-pyupgrade{2.5,2.6,2.7,2.8,2.9,2.10,2.11,2.12,2.13,2.14,2.15,2.16,2.17,2.18,2.19,2.20,2.21,2.22,2.23,2.24,2.25,2.26,2.27,2.28,2.29,2.30,2.31,2.32,2.33,2.34,2.35,2.36,2.37,latest},build", experimental: True}
+          - {python-version: "pypy-3.6", testenvs: "pypy36-pyupgrade{2.5,2.6,2.7,2.8,2.9,2.10,2.11,2.12,2.13,2.14,2.15,2.16,2.17,2.18,2.19,2.20,2.21,2.22,2.23,2.24,2.25,2.26,2.27,2.28,2.29,2.30,2.31,latest},build", experimental: False}
+          - {python-version: "pypy-3.7", testenvs: "pypy37-pyupgrade{2.5,2.6,2.7,2.8,2.9,2.10,2.11,2.12,2.13,2.14,2.15,2.16,2.17,2.18,2.19,2.20,2.21,2.22,2.23,2.24,2.25,2.26,2.27,2.28,2.29,2.30,2.31,2.32,2.33,2.34,2.35,2.36,2.37,latest},build", experimental: True}
+          - {python-version: "pypy-3.8", testenvs: "pypy38-pyupgrade{2.5,2.6,2.7,2.8,2.9,2.10,2.11,2.12,2.13,2.14,2.15,2.16,2.17,2.18,2.19,2.20,2.21,2.22,2.23,2.24,2.25,2.26,2.27,2.28,2.29,2.30,2.31,2.32,2.33,2.34,2.35,2.36,2.37,latest},build", experimental: True}
+          - {python-version: "pypy-3.9", testenvs: "pypy39-pyupgrade{2.5,2.6,2.7,2.8,2.9,2.10,2.11,2.12,2.13,2.14,2.15,2.16,2.17,2.18,2.19,2.20,2.21,2.22,2.23,2.24,2.25,2.26,2.27,2.28,2.29,2.30,2.31,2.32,2.33,2.34,2.35,2.36,2.37,latest}", experimental: True}
 
     steps:
       - name: Checkout 🛎️
@@ -67,3 +71,10 @@ jobs:
       - name: "Run Tests for Python ${{ matrix.config.python-version }}"
         if: steps.setup-python.outcome == 'success'
         run: python -m tox -e "${{ matrix.config.testenvs }}" -s false
+
+      - name: "Upload Coverage 🚀"
+        uses: actions/upload-artifact@v2
+        if: ${{ always() && steps.setup-python.outcome == 'success' }}
+        with:
+          name: "coverage-${{ matrix.config.python-version }}"
+          path: .coverage
