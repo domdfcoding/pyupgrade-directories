@@ -4,6 +4,18 @@ name: Linux
 
 on:
   push:
+    branches-ignore:
+      - 'repo-helper-update'
+      - 'pre-commit-ci-update-config'
+      - 'imgbot'
+    tags:
+      - '*'
+  pull_request:
+
+permissions:
+  actions: write
+  issues: write
+  contents: read
 
 jobs:
   tests:
@@ -11,7 +23,7 @@ jobs:
     runs-on: "ubuntu-20.04"
     continue-on-error: ${{ matrix.config.experimental }}
     env:
-      USING_COVERAGE: '3.6,3.7,3.8,3.9,3.10.0-alpha.7,pypy-3.6'
+      USING_COVERAGE: '3.6,3.7,3.8,3.9,3.10,pypy-3.6'
 
     strategy:
       fail-fast: False
@@ -21,27 +33,41 @@ jobs:
           - {python-version: "3.7", testenvs: "py37-pyupgrade{2.5,2.6,2.7,2.8,2.9,2.10,2.11},build", experimental: False}
           - {python-version: "3.8", testenvs: "py38-pyupgrade{2.5,2.6,2.7,2.8,2.9,2.10,2.11},build", experimental: False}
           - {python-version: "3.9", testenvs: "py39-pyupgrade{2.5,2.6,2.7,2.8,2.9,2.10,2.11},build", experimental: False}
-          - {python-version: "3.10.0-alpha.7", testenvs: "py310-dev-pyupgrade{2.5,2.6,2.7,2.8,2.9,2.10,2.11},build", experimental: True}
+          - {python-version: "3.10", testenvs: "py310-dev-pyupgrade{2.5,2.6,2.7,2.8,2.9,2.10,2.11},build", experimental: True}
           - {python-version: "pypy-3.6", testenvs: "pypy3-pyupgrade{2.5,2.6,2.7,2.8,2.9,2.10,2.11},build", experimental: False}
 
     steps:
       - name: Checkout 🛎️
         uses: "actions/checkout@v2"
 
+      - name: Check for changed files
+        if: startsWith(github.ref, 'refs/tags/') != true
+        uses: dorny/paths-filter@v2
+        id: changes
+        with:
+          list-files: "json"
+          filters: |
+            code:
+              - '!(doc-source/**|CONTRIBUTING.rst|.imgbotconfig|.pre-commit-config.yaml|.pylintrc|.readthedocs.yml)'
+
       - name: Setup Python 🐍
+        id: setup-python
+        if: ${{ steps.changes.outputs.code == 'true' || steps.changes.outcome == 'skipped' }}
         uses: "actions/setup-python@v2"
         with:
           python-version: "${{ matrix.config.python-version }}"
 
       - name: Install dependencies 🔧
+        if: steps.setup-python.outcome == 'success'
         run: |
           python -VV
           python -m site
           python -m pip install --upgrade pip setuptools wheel
-          python -m pip install --upgrade tox virtualenv
+          python -m pip install --upgrade tox virtualenv!=20.16.0
 
       - name: "Run Tests for Python ${{ matrix.config.python-version }}"
-        run: python -m tox -e "${{ matrix.config.testenvs }}"
+        if: steps.setup-python.outcome == 'success'
+        run: python -m tox -e "${{ matrix.config.testenvs }}" -s false
 
 
 
@@ -56,21 +82,21 @@ jobs:
 
       - name: Setup Python 🐍
         uses: "actions/setup-python@v2"
+        if: startsWith(github.ref, 'refs/tags/')
         with:
           python-version: 3.8
-        if: startsWith(github.ref, 'refs/tags/')
 
       - name: Install dependencies 🔧
+        if: startsWith(github.ref, 'refs/tags/')
         run: |
           python -m pip install --upgrade pip setuptools wheel
           python -m pip install --upgrade tox
-        if: startsWith(github.ref, 'refs/tags/')
 
       - name: Build distributions 📦
+        if: startsWith(github.ref, 'refs/tags/')
         run: |
           tox -e build
 
-        if: startsWith(github.ref, 'refs/tags/')
 
       - name: Upload distribution to PyPI 🚀
         if: startsWith(github.ref, 'refs/tags/')
@@ -79,3 +105,11 @@ jobs:
           user: __token__
           password: ${{ secrets.PYPI_TOKEN }}
           skip_existing: true
+
+      - name: Close milestone 🚪
+        if: startsWith(github.ref, 'refs/tags/')
+        run: |
+          python -m pip install --upgrade github3.py packaging
+          python .github/milestones.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

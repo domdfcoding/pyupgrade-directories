@@ -7,12 +7,12 @@ name = "pyupgrade-directories"
 version = "0.2.0"
 description = "Run pyupgrade on all files in a directory, and optionally recursively."
 readme = "README.rst"
-keywords = [ "pyupgrade", "utility", "linting",]
+keywords = [ "linting", "pyupgrade", "utility",]
 dynamic = [ "requires-python", "classifiers", "dependencies",]
 
 [[project.authors]]
-email = "dominic@davis-foster.co.uk"
 name = "Dominic Davis-Foster"
+email = "dominic@davis-foster.co.uk"
 
 
 [project.license]
@@ -47,10 +47,30 @@ platforms = [ "Windows", "macOS", "Linux",]
 license-key = "MIT"
 package = "pyupgrade_directories"
 
-[tool.mkrecipe]
-conda-channels = [ "domdfcoding",]
-extras = "all"
+[tool.mypy]
+python_version = "3.6"
+namespace_packages = true
+check_untyped_defs = true
+warn_unused_ignores = true
+no_implicit_optional = true
+show_error_codes = true
+
+[tool.snippet-fmt]
+directives = [ "code-block",]
 
 [tool.importcheck.config]
 show = true
 count = true
+
+[tool.dependency-dash."requirements.txt"]
+order = 10
+
+[tool.snippet-fmt.languages.python]
+reformat = true
+
+[tool.snippet-fmt.languages.TOML]
+reformat = true
+
+[tool.snippet-fmt.languages.ini]
+
+[tool.snippet-fmt.languages.json]
