@@ -62,7 +62,7 @@ def iter_py_files(
 
 		if any(
 				exclude_dir in str(filename.parent)
-				for exclude_dir in {".mypy_cache", ".pytest_cache", "venv", ".tox", "__pycache__"}
+				for exclude_dir in {".mypy_cache", ".pytest_cache", "venv", ".venv", ".tox", "__pycache__"}
 				):
 			continue
 
