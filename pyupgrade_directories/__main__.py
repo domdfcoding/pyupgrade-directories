@@ -27,7 +27,7 @@ try:
 	# 3rd party
 	from pyupgrade import main as _pyup_main  # type: ignore
 
-except ImportError:
+except ImportError:  # pragma: no cover
 	# 2.8.0+
 
 	# 3rd party
