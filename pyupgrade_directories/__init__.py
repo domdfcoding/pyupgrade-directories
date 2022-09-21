@@ -46,7 +46,7 @@ def iter_py_files(
 			if recursive:
 				all_py_files += list(filename.rglob("*.py*"))
 			else:
-				all_py_files += list(filename.rglob("*.py*"))
+				all_py_files += list(filename.glob("*.py*"))
 
 	for filename in all_py_files:
 		if not filename.is_file():
