@@ -29,7 +29,7 @@ def iter_py_files(
 	"""
 	Iterate over all ``.py`` files in the given directories.
 
-	TODO: Wildcards in filename/directory
+	.. TODO:: Wildcards in filename/directory
 
 	:param files_and_dirs: An iterable of filenames and directories
 	:param recursive: Whether subdirectories should be recursed.

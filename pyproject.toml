@@ -4,7 +4,7 @@ build-backend = "whey"
 
 [project]
 name = "pyupgrade-directories"
-version = "0.2.0"
+version = "0.3.0"
 description = "Run pyupgrade on all files in a directory, and optionally recursively."
 readme = "README.rst"
 keywords = [ "linting", "pyupgrade", "utility",]
