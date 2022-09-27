@@ -43,14 +43,14 @@ def test_iter_py_files(tmp_pathplus: PathPlus):
 		assert sorted(pyupgrade_directories.iter_py_files([tmp_pathplus])) == [
 				tmp_pathplus / "code.py",
 				tmp_pathplus / "code.pyi",
-		]
+				]
 
 	with in_directory(tmp_pathplus), fail_on_systemexit():
 		assert sorted(pyupgrade_directories.iter_py_files([tmp_pathplus], recursive=True)) == [
-			tmp_pathplus / "code.py",
-			tmp_pathplus / "code.pyi",
-			tmp_pathplus / "package/submodule.py",
-		]
+				tmp_pathplus / "code.py",
+				tmp_pathplus / "code.pyi",
+				tmp_pathplus / "package/submodule.py",
+				]
 
 
 def test_main(tmp_pathplus: PathPlus):
