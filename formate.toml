@@ -44,4 +44,4 @@ known_third_party = [
     "pyupgrade",
     "requests",
 ]
-known_first_party = "pyupgrade_directories"
+known_first_party = [ "pyupgrade_directories",]
