@@ -10,13 +10,12 @@ readme = "README.rst"
 keywords = [ "linting", "pyupgrade", "utility",]
 dynamic = [ "requires-python", "classifiers", "dependencies",]
 
+[project.license]
+file = "LICENSE"
+
 [[project.authors]]
 name = "Dominic Davis-Foster"
 email = "dominic@davis-foster.co.uk"
-
-
-[project.license]
-file = "LICENSE"
 
 [project.urls]
 Homepage = "https://github.com/domdfcoding/pyupgrade-directories"
@@ -29,6 +28,10 @@ pyup_dirs = "pyupgrade_directories.__main__:main"
 
 [tool.importcheck]
 always = [ "pyupgrade_directories", "pyupgrade_directories.__main__",]
+
+[tool.importcheck.config]
+show = true
+count = true
 
 [tool.whey]
 base-classifiers = [
@@ -58,20 +61,6 @@ show_error_codes = true
 [tool.snippet-fmt]
 directives = [ "code-block",]
 
-[tool.dep_checker]
-allowed_unused = [ "pyupgrade",]
-
-[tool.importcheck.config]
-show = true
-count = true
-
-[tool.dependency-dash."requirements.txt"]
-order = 10
-
-[tool.dependency-dash."tests/requirements.txt"]
-order = 20
-include = false
-
 [tool.snippet-fmt.languages.python]
 reformat = true
 
@@ -81,3 +70,13 @@ reformat = true
 [tool.snippet-fmt.languages.ini]
 
 [tool.snippet-fmt.languages.json]
+
+[tool.dep_checker]
+allowed_unused = [ "pyupgrade",]
+
+[tool.dependency-dash."requirements.txt"]
+order = 10
+
+[tool.dependency-dash."tests/requirements.txt"]
+order = 20
+include = false
