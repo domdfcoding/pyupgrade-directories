@@ -25,18 +25,18 @@ try:
 	# < 2.8.0
 
 	# 3rd party
-	from pyupgrade import main as _pyup_main  # type: ignore
+	from pyupgrade import main as _pyup_main  # type: ignore[import-untyped]
 
 except ImportError:  # pragma: no cover
 	# 2.8.0+
 
 	# 3rd party
-	from pyupgrade._main import main as _pyup_main  # type: ignore
+	from pyupgrade._main import main as _pyup_main  # type: ignore[import-untyped]
 
 __all__ = ["main"]
 
 
-def main(argv: Optional[Sequence[str]] = None) -> int:
+def main(argv: Optional[Sequence[str]] = None) -> int:  # noqa: PRM002
 	"""
 	Entry point for ``pyupgrade_directories``.
 	"""
