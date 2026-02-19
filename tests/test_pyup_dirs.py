@@ -36,7 +36,7 @@ def test_iter_py_files(tmp_pathplus: PathPlus):
 
 	with in_directory(tmp_pathplus), fail_on_systemexit():
 		assert list(
-				pyupgrade_directories.iter_py_files([Path("code.py"), Path("README.txt"), Path("i.dont.exist")])
+				pyupgrade_directories.iter_py_files([Path("code.py"), Path("README.txt"), Path("i.dont.exist")]),
 				) == [tmp_pathplus / "code.py"]
 
 	with in_directory(tmp_pathplus), fail_on_systemexit():
