@@ -89,11 +89,11 @@ pyupgrade-directories
 	:target: https://github.com/domdfcoding/pyupgrade-directories/commit/master
 	:alt: GitHub last commit
 
-.. |maintained| image:: https://img.shields.io/maintenance/yes/2022
+.. |maintained| image:: https://img.shields.io/maintenance/yes/2026
 	:alt: Maintenance
 
 .. |pypi-downloads| image:: https://img.shields.io/pypi/dm/pyupgrade-directories
-	:target: https://pypi.org/project/pyupgrade-directories/
+	:target: https://pypistats.org/packages/pyupgrade-directories
 	:alt: PyPI - Downloads
 
 .. end shields
