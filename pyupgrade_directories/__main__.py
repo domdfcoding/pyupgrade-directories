@@ -16,10 +16,15 @@ Run pyupgrade on all files in a directory, and optionally recursively.
 import argparse
 import pathlib
 import sys
-from typing import Optional, Sequence
+from typing import List, Optional, Sequence
+
+# 3rd party
+import tokenize_rt  # nodep
 
 # this package
 from pyupgrade_directories import iter_py_files
+
+tokenize_rt.List = List
 
 try:
 	# < 2.8.0
