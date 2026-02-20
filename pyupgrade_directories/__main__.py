@@ -19,7 +19,7 @@ import sys
 from typing import List, Optional, Sequence
 
 # 3rd party
-import tokenize_rt  # nodep
+import tokenize_rt  # type: ignore[import-untyped]  # nodep
 
 # this package
 from pyupgrade_directories import iter_py_files
